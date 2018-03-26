@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/TextToGUI.iml" filepath="$PROJECT_DIR$/TextToGUI.iml" />
       <module fileurl="file://$PROJECT_DIR$/com/gauck/sam/com/gauck/sam.iml" filepath="$PROJECT_DIR$/com/gauck/sam/com/gauck/sam.iml" />
+      <module fileurl="file://$PROJECT_DIR$/src/com/samgauck/src/com/samgauck.iml" filepath="$PROJECT_DIR$/src/com/samgauck/src/com/samgauck.iml" />
     </modules>
   </component>
 </project>
