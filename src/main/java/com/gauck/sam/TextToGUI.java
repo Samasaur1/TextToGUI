@@ -37,10 +37,13 @@ public class TextToGUI {
         // startUpTest.printSomething();
         t = new Thread(() -> Application.launch(GUI.class));
         t.start();
-        GUI g = GUI.waitFor();
-        gui = g;
-        System.setOut(g.stdout);
-        System.setIn(g.stdin);
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        System.setOut(GUI.getInstance().stdout);
+        System.setIn(GUI.getInstance().stdin);
     }
 
     public void stop() {

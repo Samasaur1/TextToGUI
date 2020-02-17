@@ -14,33 +14,18 @@ import java.io.*;
 import java.util.Arrays;
 import java.util.concurrent.CountDownLatch;
 
-class GUI extends Application {
-    static final CountDownLatch latch = new CountDownLatch(1);
-    static GUI g = null;
-
-    static GUI waitFor() {
-        try {
-            latch.await();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        return g;
+public class GUI extends Application {
+    private static GUI gui = null;
+    public static GUI getInstance() {
+        return gui;
     }
 
-    static void setGUI(GUI g0) {
-        g = g0;
-        latch.countDown();
-    }
-
-    GUI() {
-        setGUI(this);
-    }
-
-    InputStream stdin;
-    PrintStream stdout;
+    public InputStream stdin;
+    public PrintStream stdout;
 
     @Override
     public void start(Stage primaryStage) {
+        GUI.gui = this;
         primaryStage.setTitle("GUI");
         TextField input = new TextField();
         TextArea output = new TextArea();
